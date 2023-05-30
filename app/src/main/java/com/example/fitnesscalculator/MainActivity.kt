@@ -70,20 +70,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setAppLanguageFromPreference() {
-        val language = sharedPrefs.getString("language", "en") // Default to English if language not found
-        setAppLanguage(language)
+        val currentLanguage = resources.configuration.locale.language
+        val selectedLanguage = sharedPrefs.getString("language", "en")
+
+        if (selectedLanguage != currentLanguage) {
+            updateAppLanguage(selectedLanguage)
+            recreate()
+        }
     }
 
-    private fun setAppLanguage(language: String?) {
-        val locale = language?.let { Locale(it) }
-        if (locale != null) {
-            Locale.setDefault(locale)
-        }
-        val configuration = Configuration()
+
+
+    private fun updateAppLanguage(language: String?) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+
+        val resources = baseContext.resources
+        val configuration = resources.configuration
         configuration.setLocale(locale)
-        baseContext.resources.updateConfiguration(configuration, baseContext.resources.displayMetrics)
-        saveLanguageToPreference(language)
+
+        val editor = sharedPrefs.edit()
+        editor.putString("language", language)
+        editor.apply()
     }
+
+
 
     private fun saveLanguageToPreference(language: String?) {
         sharedPrefs.edit().putString("language", language).apply()
