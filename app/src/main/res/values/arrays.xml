@@ -2,14 +2,10 @@
 <resources>
     <string-array name="language_entries">
         <item>English</item>
-        <item>Français</item>
-        <item>Deutsch</item>
-        <!-- Add more language options as needed -->
+        <item>Türkçe</item>
     </string-array>
     <string-array name="language_entry_values">
         <item>en</item>
-        <item>fr</item>
-        <item>de</item>
-        <!-- Use language codes as values corresponding to each language -->
+        <item>tr</item>
     </string-array>
 </resources>
