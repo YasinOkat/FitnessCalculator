@@ -5,7 +5,7 @@
     <string name="title_notifications">History</string>
     <string name="body_fat_percentage">%s%% Body Fat</string>
     <string name="error_invalid_input">Invalid input. Please enter valid values.</string>
-    <string name="error_select_gender">Please select only one gender.</string>
+    <string name="error_select_gender">Please select one gender.</string>
     <string name="error_invalid_hip">Please enter a valid hip circumference.</string>
     <string name="male">Male</string>
     <string name="female">Female</string>

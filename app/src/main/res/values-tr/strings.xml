@@ -5,7 +5,7 @@
     <string name="title_notifications">Geçmiş</string>
     <string name="body_fat_percentage">%s%% Yağ Oranı</string>
     <string name="error_invalid_input">Geçersiz giriş. Lütfen geçerli bir sayı giriniz.</string>
-    <string name="error_select_gender">Lütfen sadece bir cinsiyet seçiniz.</string>
+    <string name="error_select_gender">Lütfen bir cinsiyet seçiniz.</string>
     <string name="error_invalid_hip">Lütfen geçerli bir kalça çevresi giriniz.</string>
     <string name="male">Erkek</string>
     <string name="female">Kadın</string>
@@ -15,7 +15,7 @@
     <string name="hip_circumference_cm">Kalça Çevresi (cm)</string>
     <string name="calculate">Hesapla</string>
     <string name="weight_kg">Ağırlık (kg)</string>
-    <string name="enter_weight_in_kg">Kilogram cinsinden giriniz</string>
+    <string name="enter_weight_in_kg">Ağırlığınızı kilogram cinsinden giriniz</string>
     <string name="body_fat_ratio">Vücut Yağ Oranı (%)</string>
     <string name="enter_body_fat_ratio">Vücut yağ oranı giriniz</string>
     <string name="activity_level">Hareket Düzeyi</string>

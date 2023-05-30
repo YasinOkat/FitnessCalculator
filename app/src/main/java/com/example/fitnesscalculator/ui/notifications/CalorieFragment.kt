@@ -11,11 +11,11 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.fitnesscalculator.R
-import com.example.fitnesscalculator.databinding.FragmentNotificationsBinding
+import com.example.fitnesscalculator.databinding.FragmentCalorieBinding
 
-class NotificationsFragment : Fragment() {
+class CalorieFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentCalorieBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var weightEditText: EditText
@@ -30,7 +30,7 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentCalorieBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         weightEditText = binding.editWeight

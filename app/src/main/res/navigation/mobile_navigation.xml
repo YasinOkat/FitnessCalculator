@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_body_fat"
-        android:name="com.example.fitnesscalculator.ui.home.HomeFragment"
+        android:name="com.example.fitnesscalculator.ui.home.BodyFatFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_bodyfat" />
 
     <fragment
         android:id="@+id/navigation_calorie_calc"
@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fitnesscalculator.ui.notifications.NotificationsFragment"
+        android:name="com.example.fitnesscalculator.ui.notifications.CalorieFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_calorie" />
 
     <fragment
         android:id="@+id/navigation_settings"

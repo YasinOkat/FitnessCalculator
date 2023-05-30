@@ -1,19 +1,20 @@
 package com.example.fitnesscalculator.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.fitnesscalculator.databinding.FragmentHomeBinding
+import com.example.fitnesscalculator.databinding.FragmentBodyfatBinding
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import com.example.fitnesscalculator.R
 import kotlin.math.log10
 
-class HomeFragment : Fragment() {
+class BodyFatFragment : Fragment() {
 
     private lateinit var genderMaleCheckBox: CheckBox
     private lateinit var genderFemaleCheckBox: CheckBox
@@ -24,7 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var calculateButton: Button
     private lateinit var bodyFatTextView: TextView
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentBodyfatBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,7 +33,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentBodyfatBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         genderMaleCheckBox = binding.checkboxMale
@@ -65,6 +66,7 @@ class HomeFragment : Fragment() {
         return root
     }
 
+    @SuppressLint("StringFormatMatches")
     private fun calculateBodyFatPercentage() {
         val height = heightEditText.text.toString().toDoubleOrNull()
         val neck = neckEditText.text.toString().toDoubleOrNull()
