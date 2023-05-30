@@ -73,8 +73,17 @@ class NotificationsFragment : Fragment() {
     }
 
     private fun calculateBMRAndCalorieNeeds() {
-        val weight = weightEditText.text.toString().toDoubleOrNull() ?: 0.0
-        val bodyFatRatio = bodyFatEditText.text.toString().toDoubleOrNull() ?: 0.0
+        val weightText = weightEditText.text.toString().trim()
+        val bodyFatText = bodyFatEditText.text.toString().trim()
+
+        if (weightText.isEmpty() || bodyFatText.isEmpty()) {
+            bmrTextView.text = getString(R.string.enter_values)
+            dailyCalorieNeedsTextView.text = ""
+            return
+        }
+
+        val weight = weightText.toDoubleOrNull() ?: 0.0
+        val bodyFatRatio = bodyFatText.toDoubleOrNull() ?: 0.0
         val activityLevel = activityLevelSpinner.selectedItem.toString()
 
         val bmr = calculateBMR(weight, bodyFatRatio)
@@ -83,6 +92,7 @@ class NotificationsFragment : Fragment() {
         bmrTextView.text = getString(R.string.bmr_label).format(bmr)
         dailyCalorieNeedsTextView.text = getString(R.string.calorie_needs_label).format(dailyCalorieNeeds)
     }
+
 
     private fun calculateBMR(weight: Double, bodyFatRatio: Double): Double {
         val leanBodyMass = weight * (100 - bodyFatRatio) / 100

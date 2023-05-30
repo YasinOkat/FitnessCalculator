@@ -27,5 +27,5 @@
     <string name="bmr_label">BMR: %.2f kcal</string>
     <string name="calorie_needs_label">Ağırlığı korumak için gereken kalori: %.2f kcal</string>
     <string name="settings">Ayarlar</string>
-
+    <string name="enter_values">Verileri giriniz</string>
 </resources>
