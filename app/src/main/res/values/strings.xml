@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FitnessCalculator</string>
+    <string name="app_name">Fitness Calculator</string>
     <string name="title_home">Body Fat Calculator</string>
     <string name="title_dashboard">Daily Calorie Calculator</string>
     <string name="title_notifications">History</string>
@@ -7,4 +7,25 @@
     <string name="error_invalid_input">Invalid input. Please enter valid values.</string>
     <string name="error_select_gender">Please select only one gender.</string>
     <string name="error_invalid_hip">Please enter a valid hip circumference.</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="neck_circumference_cm">Neck Circumference (cm)</string>
+    <string name="waist_circumference_cm">Waist Circumference (cm)</string>
+    <string name="hip_circumference_cm">Hip Circumference (cm)</string>
+    <string name="calculate">Calculate</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="enter_weight_in_kg">Enter weight in kg</string>
+    <string name="body_fat_ratio">Body Fat Ratio (%)</string>
+    <string name="enter_body_fat_ratio">Enter body fat ratio</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="sedentary">Sedentary (no exercise)</string>
+    <string name="light">Light (1–3 day of exercise)</string>
+    <string name="moderate">Moderate (3–5 day of exercise)</string>
+    <string name="active">Active (5–7 day of exercise)</string>
+    <string name="very_active">Very Active (5–7 day of intense exercise)</string>
+    <string name="bmr_label">BMR: %.2f kcal</string>
+    <string name="calorie_needs_label">Calories to maintain weight: %.2f kcal</string>
+    <string name="settings">Settings</string>
+
 </resources>

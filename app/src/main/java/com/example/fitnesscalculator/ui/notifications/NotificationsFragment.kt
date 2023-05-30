@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.fitnesscalculator.R
 import com.example.fitnesscalculator.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
@@ -55,11 +56,11 @@ class NotificationsFragment : Fragment() {
 
     private fun setupActivityLevelSpinner() {
         val activityLevels = arrayOf(
-            "Sedentary (no exercise)",
-            "Light (1-3 day of exercise)",
-            "Moderate (3-5 day of exercise)",
-            "Active (5-7 day of exercise) ",
-            "Very Active (5-7 day of intense exercise)"
+            getString(R.string.sedentary),
+            getString(R.string.light),
+            getString(R.string.moderate),
+            getString(R.string.active),
+            getString(R.string.very_active)
         )
 
         val adapter = ArrayAdapter(
@@ -79,8 +80,8 @@ class NotificationsFragment : Fragment() {
         val bmr = calculateBMR(weight, bodyFatRatio)
         val dailyCalorieNeeds = calculateDailyCalorieNeeds(bmr, activityLevel)
 
-        bmrTextView.text = "BMR: %.2f kcal".format(bmr)
-        dailyCalorieNeedsTextView.text = "Calories to maintain weight: %.2f kcal".format(dailyCalorieNeeds)
+        bmrTextView.text = getString(R.string.bmr_label).format(bmr)
+        dailyCalorieNeedsTextView.text = getString(R.string.calorie_needs_label).format(dailyCalorieNeeds)
     }
 
     private fun calculateBMR(weight: Double, bodyFatRatio: Double): Double {
@@ -90,11 +91,11 @@ class NotificationsFragment : Fragment() {
 
     private fun calculateDailyCalorieNeeds(bmr: Double, activityLevel: String): Double {
         return when (activityLevel) {
-            "Sedentary (no exercise)" -> bmr * 1.2
-            "Light (1-3 day of exercise)" -> bmr * 1.375
-            "Moderate (3-5 day of exercise)" -> bmr * 1.55
-            "Active (5-7 day of exercise)" -> bmr * 1.725
-            "Very Active (5-7 day of intense exercise)" -> bmr * 1.9
+            getString(R.string.sedentary) -> bmr * 1.2
+            getString(R.string.light) -> bmr * 1.375
+            getString(R.string.moderate) -> bmr * 1.55
+            getString(R.string.active) -> bmr * 1.725
+            getString(R.string.very_active) -> bmr * 1.9
             else -> bmr
         }
     }

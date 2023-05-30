@@ -1,14 +1,11 @@
 package com.example.fitnesscalculator.ui
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.preference.ListPreference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.fitnesscalculator.R
-import androidx.preference.ListPreference
-import androidx.preference.Preference
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.content.SharedPreferences
+import java.util.Locale
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -24,10 +21,26 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
         if (key == "language_preference") {
-            val languagePreference = findPreference<ListPreference>(key)
-            languagePreference?.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
+            val selectedLanguage = sharedPreferences.getString(key, "")
+            setLocale(selectedLanguage)
+            activity?.recreate()
         }
     }
+
+    private fun setLocale(languageCode: String?) {
+        languageCode?.let {
+            val locale = Locale(languageCode)
+            Locale.setDefault(locale)
+
+            val resources = context?.resources
+            val configuration = resources?.configuration
+            configuration?.setLocale(locale)
+            resources?.updateConfiguration(configuration, resources.displayMetrics)
+
+        }
+    }
+
+
 
     override fun onResume() {
         super.onResume()
