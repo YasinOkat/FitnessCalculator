@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FitnessCalculator</string>
+    <string name="title_home">Body Fat Calculator</string>
+    <string name="title_dashboard">Daily Calorie Calculator</string>
+    <string name="title_notifications">History</string>
+    <string name="body_fat_percentage">%s%% Body Fat</string>
+    <string name="error_invalid_input">Invalid input. Please enter valid values.</string>
+    <string name="error_select_gender">Please select only one gender.</string>
+    <string name="error_invalid_hip">Please enter a valid hip circumference.</string>
+</resources>
