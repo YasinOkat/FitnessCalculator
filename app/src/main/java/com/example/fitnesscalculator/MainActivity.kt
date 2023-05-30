@@ -14,10 +14,8 @@ import androidx.preference.PreferenceManager
 import com.example.fitnesscalculator.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
@@ -25,15 +23,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var sharedPrefs: SharedPreferences
 
-    private val splashTimeOut: Long = 1000 // 1 second
+    private val splashTimeOut: Long = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
 
-        // Check if the app language needs to be changed
-        val currentLanguage = resources.configuration.locale.language
+        val currentLanguage = resources.configuration.locales[0].language
         val selectedLanguage = sharedPrefs.getString("language", "en")
 
         if (selectedLanguage != currentLanguage) {
@@ -45,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSplashScreen() {
-        setContentView(R.layout.layout_loading) // Set the loading screen layout
+        setContentView(R.layout.layout_loading)
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(splashTimeOut)
@@ -94,8 +91,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        // Check if the app language needs to be changed
-        val currentLanguage = resources.configuration.locale.language
+        val currentLanguage = resources.configuration.locales[0].language
         val selectedLanguage = sharedPrefs.getString("language", "en")
 
         if (selectedLanguage != currentLanguage) {
@@ -117,6 +113,6 @@ class MainActivity : AppCompatActivity() {
         editor.putString("language", language)
         editor.apply()
 
-        recreate() // Recreate the activity with the new language
+        recreate()
     }
 }

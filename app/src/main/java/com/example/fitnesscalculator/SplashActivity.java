@@ -2,8 +2,8 @@ package com.example.fitnesscalculator;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void setAppLanguageFromPreference() {
-        String currentLanguage = getResources().getConfiguration().locale.getLanguage();
+        String currentLanguage = getResources().getConfiguration().getLocales().get(0).getLanguage();
         String selectedLanguage = sharedPrefs.getString("language", "en");
 
         if (!selectedLanguage.equals(currentLanguage)) {
@@ -46,11 +46,12 @@ public class SplashActivity extends AppCompatActivity {
         Locale locale = new Locale(language);
         Locale.setDefault(locale);
 
-        android.content.res.Resources resources = getResources();
-        android.content.res.Configuration configuration = resources.getConfiguration();
+        Configuration configuration = getResources().getConfiguration();
         configuration.setLocale(locale);
+        configuration.setLayoutDirection(locale);
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
 
-        android.content.SharedPreferences.Editor editor = sharedPrefs.edit();
+        SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putString("language", language);
         editor.apply();
     }
