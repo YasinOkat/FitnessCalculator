@@ -1,7 +1,6 @@
 package com.example.fitnesscalculator
 
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -82,8 +81,10 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun updateAppLanguage(language: String?) {
-        val locale = Locale(language)
-        Locale.setDefault(locale)
+        val locale = language?.let { Locale(it) }
+        if (locale != null) {
+            Locale.setDefault(locale)
+        }
 
         val resources = baseContext.resources
         val configuration = resources.configuration
@@ -92,11 +93,5 @@ class MainActivity : AppCompatActivity() {
         val editor = sharedPrefs.edit()
         editor.putString("language", language)
         editor.apply()
-    }
-
-
-
-    private fun saveLanguageToPreference(language: String?) {
-        sharedPrefs.edit().putString("language", language).apply()
     }
 }
