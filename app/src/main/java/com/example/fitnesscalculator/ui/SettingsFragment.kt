@@ -37,8 +37,14 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             configuration?.setLocale(locale)
             resources?.updateConfiguration(configuration, resources.displayMetrics)
 
+            // Save the selected language in shared preferences
+            val sharedPreferences = preferenceManager.sharedPreferences
+            val editor = sharedPreferences?.edit()
+            editor?.putString("language", languageCode)
+            editor?.apply()
         }
     }
+
 
 
 
