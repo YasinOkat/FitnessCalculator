@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Fitness Calculator</string>
+    <string name="title_home">Yağ Oranı Hesaplayıcı</string>
+    <string name="title_dashboard">Günlük Kalori Hesaplayıcı</string>
+    <string name="title_notifications">Geçmiş</string>
+    <string name="body_fat_percentage">%s%% Yağ Oranı</string>
+    <string name="error_invalid_input">Geçersiz giriş. Lütfen geçerli bir sayı giriniz.</string>
+    <string name="error_select_gender">Lütfen sadece bir cinsiyet seçiniz.</string>
+    <string name="error_invalid_hip">Lütfen geçerli bir kalça çevresi giriniz.</string>
+    <string name="male">Erkek</string>
+    <string name="female">Kadın</string>
+    <string name="height_cm">Boy (cm)</string>
+    <string name="neck_circumference_cm">Boyun Çevresi (cm)</string>
+    <string name="waist_circumference_cm">Bel Çevresi (cm)</string>
+    <string name="hip_circumference_cm">Kalça Çevresi (cm)</string>
+    <string name="calculate">Hesapla</string>
+    <string name="weight_kg">Ağırlık (kg)</string>
+    <string name="enter_weight_in_kg">Kilogram cinsinden giriniz</string>
+    <string name="body_fat_ratio">Vücut Yağ Oranı (%)</string>
+    <string name="enter_body_fat_ratio">Vücut yağ oranı giriniz</string>
+    <string name="activity_level">Hareket Düzeyi</string>
+    <string name="sedentary">Hareketsiz</string>
+    <string name="light">Biraz (1–3 gün antrenman)</string>
+    <string name="moderate">Ortalama (3–5 gün antrenman)</string>
+    <string name="active">Aktif (5–7 gün antrenman)</string>
+    <string name="very_active">Çok aktif (5–7 gün yoğun antrenman)</string>
+    <string name="bmr_label">BMR: %.2f kcal</string>
+    <string name="calorie_needs_label">Ağırlığı korumak için gereken kalori: %.2f kcal</string>
+    <string name="settings">Ayarlar</string>
+
+</resources>
