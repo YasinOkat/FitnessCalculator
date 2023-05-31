@@ -31,4 +31,4 @@ Contributions are welcome! If you find any bugs or have suggestions for new feat
 
 # License
 
-This project is licensed under the MIT License. Feel free to use, modify, and distribute the code
+This project is licensed under the GNU General Public License (GPL). See the [LICENSE](LICENSE) file for more information.
