@@ -25,10 +25,6 @@ The app uses the following dependencies:
     Kotlin Coroutines: Allows for asynchronous programming and background tasks.
     Material Components: Provides pre-built UI components following the Material Design guidelines.
 
-# Contributing
-
-Contributions are welcome! If you find any bugs or have suggestions for new features, please open an issue or submit a pull request.
-
 # License
 
 This project is licensed under the GNU General Public License (GPL). See the [LICENSE](LICENSE) file for more information.
